@@ -1,13 +1,13 @@
 {
   "name": "profilemanagerapi",
   "version": "1.0.0",
-  "description": "",
+  "description": "An library for interacting with Apple's Profile Manager APIs",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Tyler Schrock <tschrock123@gmail.com>",
-  "license": "ISC",
+  "license": "MPL-2",
   "devDependencies": {
     "@types/node": "^10.0.8",
     "@types/request": "^2.47.0",
