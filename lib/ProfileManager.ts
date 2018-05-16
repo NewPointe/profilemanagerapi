@@ -4,7 +4,7 @@
 import * as request from 'request-promise-native';
 
 // Consts
-const SESSION_COOKIE = "_session_id";
+//const SESSION_COOKIE = "_session_id";
 const CSRF_COOKIE = "csrf_token";
 
 export class ProfileManager {
