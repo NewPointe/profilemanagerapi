@@ -17,7 +17,16 @@ export const handler = (argv: Argv) => {
             pm.getDeviceIds()
                 .then(ids => pm.getDeviceDetails(ids))
                 .then(
-                    success => console.dir(success),
+                    devices => console.table(
+                        devices.map(
+                            device => ({ 
+                                Id: device.id,
+                                Name: device.DeviceName,
+                                Product: device.ProductName,
+                                SerialNumber: device.SerialNumber
+                            })
+                        )
+                    ),
                     fail => console.log(fail)
                 );
         },
