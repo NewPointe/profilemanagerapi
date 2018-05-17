@@ -1,35 +1,35 @@
 #!/usr/bin/env node
 'use strict';
 
-// import * as yargs from 'yargs';
-import yargs = require('yargs')
+// import * as yargs from 'yargs'; // Can't use this because it breaks --help
+import yargs = require('yargs');
 
-const argv = yargs
+yargs
 
     // Config options
     .options({
-        'server': {
-            alias: 's',
+        's': {
+            alias: 'server',
             demandOption: true,
             describe: 'The server to connect to.',
             type: 'string'
         },
-        'username': {
-            alias: 'u',
+        'u': {
+            alias: 'username',
             describe: 'The username to login with.',
             type: 'string',
             conflicts: 'key',
             implies: 'password'
         },
-        'password': {
-            alias: 'p',
+        'p': {
+            alias: 'password',
             describe: 'The password to login with.',
             type: 'string',
             conflicts: 'key',
             implies: 'username'
         },
-        'key': {
-            alias: 'k',
+        'k': {
+            alias: 'key',
             describe: 'An existing session key to use (cc.collabd_session_guid).',
             type: 'string',
             conflicts: ['username', 'password']
@@ -56,6 +56,12 @@ const argv = yargs
     // Throw on invalid options/commands
     .strict()
 
-    .help()
-    .version()
-    .argv
+    // Enable help
+    .help('help')
+    .alias('h', 'help')
+
+    // Enable version
+    .version('version')
+    .alias('v', 'version')
+
+    .parse();

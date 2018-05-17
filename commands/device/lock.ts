@@ -10,10 +10,11 @@ export const builder = {};
 export const handler = (argv: Argv) => {
 
     const deviceId: number = (argv as any).id
-    console.log(`Attempting to lock device ${deviceId}...`);
+    console.log(`Logging in...`);
 
     loginProfileManager(argv).then(
         pm => {
+            console.log(`Starting lock task for device ${deviceId}...`);
             pm.doMagic({
                 "library_item_task": {
                     "start_task": [[

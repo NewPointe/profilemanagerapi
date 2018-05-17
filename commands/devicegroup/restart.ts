@@ -10,10 +10,11 @@ export const builder = {};
 export const handler = (argv: Argv) => {
 
     const deviceGroupId: number = (argv as any).id
-    console.log(`Attempting to restart device group ${deviceGroupId}...`);
+    console.log(`Logging in...`);
 
     loginProfileManager(argv).then(
         pm => {
+            console.log(`Starting restart task for device group ${deviceGroupId}...`);
             pm.doMagic({
                 "library_item_task": {
                     "start_task": [[

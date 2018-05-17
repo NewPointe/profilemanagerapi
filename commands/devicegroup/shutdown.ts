@@ -10,7 +10,8 @@ export const handler = (argv: Argv) => {
     confirm("Are you sure?").then(
         rslt => {
             if(rslt) {
-                console.log(`Shutting down device ${(argv as any).id}`)
+                console.log(`Shutting down device ${(argv as any).id}`);
+                console.warn(`Not implimented yet`);
             }
         },
         () => {}
