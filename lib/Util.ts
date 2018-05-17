@@ -81,7 +81,5 @@ export async function loginProfileManager(options: any) {
         const macServerAuth = new MacServerAuth(options.server);
         options.key = await macServerAuth.getAuthorizedSessionGuid(options.username, options.password);
     }
-    const profileManager = new ProfileManager(`${options.server}/devicemanagement`);
-    await profileManager.authorize(options.key);
-    return profileManager;
+    return new ProfileManager(`${options.server}/devicemanagement`, options.key);
 }
